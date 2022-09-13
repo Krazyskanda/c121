@@ -23,8 +23,8 @@ while True:
             for id ,lm in enumerate(hand_landmark.landmark):
                 lm_list.append(lm)
 
-             #Code goes here   
-	finger_fold_status =[]
+            #array to hold true or false if finger is folded    
+            finger_fold_status =[]
             for tip in finger_tips:
                 #getting the landmark tip position and drawing blue circle
                 x,y = int(lm_list[tip].x*w), int(lm_list[tip].y*h)
@@ -51,6 +51,7 @@ while True:
                 if lm_list[thumb_tip].y > lm_list[thumb_tip-1].y > lm_list[thumb_tip-2].y:
                     print("DISLIKE")   
                     cv2.putText(img ,"DISLIKE", (20,30), cv2.FONT_HERSHEY_SIMPLEX, 1, (0,0,255), 3)
+
 
 
 
